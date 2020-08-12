@@ -18,6 +18,7 @@ def postToMedium(heading,body):
 commit_msg = " ".join(sys.argv[1:])
 blog_path = os.path.join(ENV["GITHUB_WORKSPACE"],ENV["BLOG_DIR"])
 blog_dir = os.listdir(blog_path)
+echo "Blog dir obtained"
 if "PUBLISH" in commit_msg.upper():
     post_name = commit_msg.upper().split("PUBLISH")[1].strip()[:-1]
     for i in blog_dir:
