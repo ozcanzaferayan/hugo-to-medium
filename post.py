@@ -24,12 +24,10 @@ if "PUBLISH" in commit_msg.upper():
     post_name = commit_msg.upper().split("PUBLISH")[1].strip()[:-1]
     print("2")
     for i in blog_dir:
-        print("3")
+        print("43")
         print(post_name)
         print(i)
         if post_name == i.upper().strip():
-            print(i)
-            print(post_name)
             post_path = os.path.join(blog_path,i)
             body = open(post_path,"r").read()
             postToMedium(i,body)
