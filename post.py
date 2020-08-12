@@ -20,8 +20,11 @@ blog_path = os.path.join(ENV["GITHUB_WORKSPACE"],ENV["BLOG_DIR"])
 blog_dir = os.listdir(blog_path)
 print("Blog dir obtained")
 if "PUBLISH" in commit_msg.upper():
+    print("1")
     post_name = commit_msg.upper().split("PUBLISH")[1].strip()[:-1]
+    print("2")
     for i in blog_dir:
+        print("3")
         if post_name == i.upper().strip():
             post_path = os.path.join(blog_path,i)
             body = open(post_path,"r").read()
