@@ -17,7 +17,7 @@ blog_dir = os.listdir(blog_path)
 
 if "PUBLISH" in commit_msg.upper():
     print(f"{commit_msg} <= Commit message")
-    post_name = commit_msg.upper().split("PUBLISH: ")[1].strip()
+    post_name = commit_msg.upper().split("PUBLISH: ")[1].strip()[:-1]
     print(f"{post_name} <= Extracted post name from commit.")
     print(f"{blog_dir} <= Looping through dir files")
     for i in blog_dir:
